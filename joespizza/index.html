@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joe's Pizza - Video Testimonials</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2d3748;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #718096;
+            font-size: 1.2em;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            background: #000;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 12px;
+        }
+        
+        .branding {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .branding p {
+            color: #a0aec0;
+            font-size: 0.9em;
+        }
+        
+        .branding a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .branding a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                border-radius: 12px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍕 Joe's Pizza</h1>
+            <p class="subtitle">Hear from our happy customers</p>
+        </div>
+        
+        <div class="video-container">
+            <!-- REPLACE YOUR_PLAYLIST_ID with your actual YouTube playlist ID -->
+            <iframe 
+                src="https://www.youtube.com/embed/videoseries?list=PLs2Uds0IqsfitE7ewIanXa7t0FresGxeB&rel=0&modestbranding=1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <div class="branding">
+            <p>Powered by <a href="https://keepitlocal.la" target="_blank">KeepitLocal.LA</a></p>
+        </div>
+    </div>
+</body>
+</html>
+```
 
+4. **Scroll down, commit message:**
+```
+Created Joe's Pizza video testimonials page
+```
+
+5. Click **"Commit new file"**
+
+---
+
+### **Step 5: Create Template for Future Clients**
+
+1. Click **"Add file"** → **"Create new file"**
+
+2. **Filename:**
+```
+_template/index.html
