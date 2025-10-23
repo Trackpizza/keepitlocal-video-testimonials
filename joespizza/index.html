@@ -58,7 +58,7 @@
         
         .swiper {
             width: 100%;
-            padding-bottom: 50px;
+            padding-bottom: 60px; /* More room for bigger dots */
         }
         
         .video-container {
@@ -103,22 +103,32 @@
             font-weight: bold;
         }
         
-        /* Swiper pagination dots */
+        /* Swiper pagination dots - BIGGER & MORE VISIBLE */
         .swiper-pagination {
-            bottom: 10px !important;
+            bottom: 15px !important;
         }
         
         .swiper-pagination-bullet {
-            width: 10px;
-            height: 10px;
+            width: 14px;
+            height: 14px;
             background: #cbd5e0;
+            opacity: 0.6;
+            margin: 0 6px !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .swiper-pagination-bullet:hover {
             opacity: 1;
+            transform: scale(1.2);
         }
         
         .swiper-pagination-bullet-active {
             background: #667eea;
-            width: 24px;
-            border-radius: 5px;
+            opacity: 1;
+            width: 40px;
+            border-radius: 7px;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.4);
         }
         
         /* Video Modal/Lightbox */
@@ -240,6 +250,10 @@
                 display: none; /* Hide arrows on mobile, use swipe */
             }
             
+            .swiper {
+                padding-bottom: 50px;
+            }
+            
             .modal-content {
                 width: 95%;
             }
@@ -263,11 +277,11 @@
         <div class="swiper videoSwiper">
             <div class="swiper-wrapper">
                 
-                <!-- VIDEO 1 - Replace VIDEO_ID_1 with actual YouTube video ID -->
+                <!-- VIDEO 1 -->
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/AaQkIiSOBhg" 
+                            src="https://www.youtube.com/embed/2foiwu6gn7Y" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -279,7 +293,7 @@
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/1QxNvbXITt8" 
+                            src="https://www.youtube.com/embed/AaQkIiSOBhg" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -291,7 +305,7 @@
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/Biuk-j3Uw2Q" 
+                            src="https://www.youtube.com/embed/1QxNvbXITt8" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -303,7 +317,7 @@
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/gSY_pnw3b3U" 
+                            src="https://www.youtube.com/embed/Biuk-j3Uw2Q" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -315,7 +329,7 @@
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/zx4Kj-UCyC0" 
+                            src="https://www.youtube.com/embed/gSY_pnw3b3U" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -327,7 +341,7 @@
                 <div class="swiper-slide">
                     <div class="video-container">
                         <iframe 
-                            src="https://www.youtube.com/embed/1uzWcHHdmF0" 
+                            src="https://www.youtube.com/embed/zx4Kj-UCyC0" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen>
@@ -380,6 +394,7 @@
                 el: ".swiper-pagination",
                 clickable: true,
                 dynamicBullets: true,
+                dynamicMainBullets: 3, // Shows current + 1 before + 1 after
             },
             keyboard: {
                 enabled: true,
@@ -419,7 +434,7 @@
                     
                     modalIframe.src = videoSrc;
                     modal.classList.add('active');
-                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    document.body.style.overflow = 'hidden';
                 }
             });
         });
@@ -427,15 +442,15 @@
         // Close modal when clicking X
         closeBtn.addEventListener('click', function() {
             modal.classList.remove('active');
-            modalIframe.src = ''; // Stop video
-            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            modalIframe.src = '';
+            document.body.style.overflow = 'auto';
         });
         
         // Close modal when clicking outside video
         modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 modal.classList.remove('active');
-                modalIframe.src = ''; // Stop video
+                modalIframe.src = '';
                 document.body.style.overflow = 'auto';
             }
         });
